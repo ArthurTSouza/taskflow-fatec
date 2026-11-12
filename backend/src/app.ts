@@ -8,10 +8,11 @@ const allowedOrigin = process.env.FRONTEND_URL;
 app.use(cors(allowedOrigin ? { origin: allowedOrigin.split(",").map((item) => item.trim()) } : undefined));
 app.use(express.json());
 
-app.get("/api/health", (_req: Request, res: Response) => {
+app.get("/api/health", (_req, res) => {
   res.status(200).json({
     status: "ok",
-    uptime: Number(process.uptime().toFixed(2))
+    uptime: Number(process.uptime().toFixed(2)),
+    service: "taskflow-api"
   });
 });
 

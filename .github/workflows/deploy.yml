@@ -49,7 +49,7 @@ jobs:
             --write-out "%{http_code}" \
             --request POST "$RENDER_DEPLOY_HOOK_URL")
           cat /tmp/render-response.txt
-          if [ "$HTTP_STATUS" != "200" ] && [ "$HTTP_STATUS" != "201" ]; then
+          if [ "$HTTP_STATUS" != "200" ] && [ "$HTTP_STATUS" != "201" ] && [ "$HTTP_STATUS" != "202" ]; then
             echo "Deploy Hook falhou. HTTP: $HTTP_STATUS"
             exit 1
           fi
