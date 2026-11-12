@@ -1,0 +1,10 @@
+**/node_modules
+**/dist
+.git
+.github
+.env
+.env.*
+**/*.test.ts
+**/*.spec.ts
+README*
+frontend
